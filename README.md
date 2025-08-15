@@ -1,12 +1,17 @@
-# Telegram YouTube 4K Downloader Bot
+# Telegram YouTube 4K Downloader Bot (Quality Picker + Cookies)
+- Quality options: 240p, 360p, 480p, 720p, 1080p, 1440p, 2160p
+- Uses `cookies.txt` to bypass age/consent checks where legal
+- Sends file to Telegram if <= 2GB, else asks to pick lower quality
 
-## Deploy on Render
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
+## Setup (Local)
+```
+pip install -r requirements.txt
+cp .env.example .env   # put your BOT_TOKEN
+python bot.py
+```
 
-## Deploy on Railway
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new)
-
-### Setup
-1. Create `.env` file from `.env.example` and add your BOT_TOKEN.
-2. Install dependencies: `pip install -r requirements.txt`
-3. Run: `python bot.py`
+## Deploy (Render/Railway)
+- Create service from this repo/zip
+- Add env var `BOT_TOKEN`
+- Start command: `python bot.py`
+- Ensure ffmpeg is available (Dockerfile provided)
